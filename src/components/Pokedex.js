@@ -12,7 +12,7 @@ const Pokedex = (props) => {
 
   const nextPage = () => {
     const nextPage = Math.min(page + 1, total);
-    setPage(nextPage);
+    nextPage < 15 ? setPage(nextPage) : setPage(nextPage - 1);
   };
 
   return (
