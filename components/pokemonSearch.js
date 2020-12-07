@@ -1,0 +1,60 @@
+import React, { useContext, useState } from "react";
+import FavoriteContext from "../contexts/favoritesContext";
+
+const PokemonSearch = (props) => {
+  const { pokemon, loading, setLoading } = props;
+  const { favoritePokemons, updateFavoritePokemons } = useContext(
+    FavoriteContext
+  );
+  const redHeart = "❤️";
+  const blackHeart = "🖤";
+  const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart;
+
+  const clickHeart = (e) => {
+    e.preventDefault();
+    updateFavoritePokemons(pokemon.name);
+  };
+  const clickXs = (e) => {
+    setLoading(true);
+  };
+  return (
+    <>
+      {loading !== true ? (
+        <div className="pokemon-card">
+          <div className="pokemon-img-container">
+            <img
+              src={pokemon.sprites.front_default}
+              alt={pokemon.name}
+              className="pokemon-img"
+            />
+          </div>
+          <div className="card-body">
+            <div className="card-top">
+              <h3>{pokemon.name}</h3>
+              <div>#{pokemon.id}</div>
+              <button onClick={clickXs}>x</button>
+            </div>
+            <div className="card-bottom">
+              <div className="pokemon-type">
+                {pokemon.types.map((type, idx) => {
+                  return (
+                    <div key={idx} className="pokemon-type-text">
+                      {type.type.name}
+                    </div>
+                  );
+                })}
+              </div>
+              <button onClick={clickHeart}>
+                <div className="pokemon-favorite">{heart}</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
+  );
+};
+
+export default PokemonSearch;
