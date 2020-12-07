@@ -41,6 +41,8 @@ export default function App() {
     } else {
       updated.push(name);
     }
+    localStorage.setItem("favorites", JSON.stringify(updated));
+
     setFavorites(updated);
   };
 
