@@ -8,7 +8,7 @@ const Searchbar = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(false);
   const onChange = (e) => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toLowerCase());
   };
 
   const onClick = async (e) => {
@@ -21,7 +21,11 @@ const Searchbar = () => {
   return (
     <div className="searchbar-container">
       <div className="searchbar">
-        <input placeholder="Buscar pokemon..." onChange={onChange} />
+        <input
+          type="search"
+          placeholder="Buscar pokemon..."
+          onChange={onChange}
+        />
       </div>
       <div className="searchbar-btn">
         <button onClick={onClick}>Buscar</button>
