@@ -26,7 +26,7 @@ const Navbar = () => {
           <span role="img" aria-label="">
             💘
           </span>{" "}
-          {favoritePokemons.length}
+          {JSON.parse(localStorage.getItem("favorites")).length}
         </div>
       )}
     </nav>
