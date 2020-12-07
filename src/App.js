@@ -18,14 +18,14 @@ export default function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await getPokemons(25, 0 * page);
+      const data = await getPokemons(15, 10.6 * page);
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
-      setTotal(Math.ceil(data.count / 25));
+      setTotal(Math.ceil(data.count / 85));
     } catch (err) {}
   };
 
