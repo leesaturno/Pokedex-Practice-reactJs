@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "api": "2.5.0",
     "contexts": "0.0.0",
     "react": "17.0.0",
     "react-dom": "17.0.0",
