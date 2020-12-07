@@ -1,6 +1,6 @@
 import React from "react";
-import { searchPokemon } from "./data/api";
-import PokemonSearch from "./components/pokemonSearch";
+import { searchPokemon } from "../data/api";
+import PokemonSearch from "../components/pokemonSearch";
 const { useState } = React;
 
 const Searchbar = () => {
