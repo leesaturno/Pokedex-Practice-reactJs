@@ -1,5 +1,5 @@
 import React from "react";
-import { searchPokemon } from "../api";
+import { searchPokemon } from "../data/api";
 import PokemonSearch from "../components/pokemonSearch";
 const { useState } = React;
 
