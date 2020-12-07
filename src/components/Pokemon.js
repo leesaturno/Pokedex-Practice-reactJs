@@ -7,7 +7,7 @@ const Pokemon = (props) => {
     FavoriteContext
   );
 
-  const redHeart = "❤️";
+  const redHeart = "💘";
   const blackHeart = "🖤";
   const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart;
 

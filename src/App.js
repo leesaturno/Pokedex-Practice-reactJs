@@ -13,7 +13,7 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [favorites, setFavorites] = useState(["raichu"]);
+  const [favorites, setFavorites] = useState([]);
 
   const fetchPokemons = async () => {
     try {

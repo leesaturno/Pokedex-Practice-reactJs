@@ -15,7 +15,20 @@ const Navbar = () => {
       <div>
         <img src={imgUrl} alt="pokeapi-logo" className="navbar-image" />
       </div>
-      <div>&#10084;&#65039; {favoritePokemons.length}</div>
+      {favoritePokemons.length === 0 ? (
+        <div>
+          <span role="img" aria-label="">
+            💔
+          </span>
+        </div>
+      ) : (
+        <div>
+          <span role="img" aria-label="">
+            💘
+          </span>{" "}
+          {favoritePokemons.length}
+        </div>
+      )}
     </nav>
   );
 };
