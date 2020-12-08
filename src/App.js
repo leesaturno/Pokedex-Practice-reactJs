@@ -49,7 +49,7 @@ export default function App() {
   return (
     <FavoriteProvider
       value={{
-        favoritePokemons: favorites,
+        favoritePokemons: JSON.parse(localStorage.getItem("favorites")),
         updateFavoritePokemons: updateFavoritePokemons
       }}
     >

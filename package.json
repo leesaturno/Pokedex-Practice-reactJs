@@ -1,7 +1,7 @@
 {
-  "name": "codealo-dev-pokedex-reactjs-add-search-function",
+  "name": "pokedex-practice-reactjs",
   "version": "1.0.0",
-  "description": "Creando un pokedex con reactjs.\n\nVideo en: https://youtu.be/IFWvfZaKF_w",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

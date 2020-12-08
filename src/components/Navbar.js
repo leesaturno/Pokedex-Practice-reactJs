@@ -15,7 +15,7 @@ const Navbar = () => {
       <div>
         <img src={imgUrl} alt="pokeapi-logo" className="navbar-image" />
       </div>
-      {favoritePokemons.length === 0 ? (
+      {JSON.parse(localStorage.getItem("favorites")).length === 0 ? (
         <div>
           <span role="img" aria-label="">
             💔
