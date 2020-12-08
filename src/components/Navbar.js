@@ -15,7 +15,7 @@ const Navbar = () => {
       <div>
         <img src={imgUrl} alt="pokeapi-logo" className="navbar-image" />
       </div>
-      {JSON.parse(localStorage.getItem("favorites")).length === 0 ? (
+      {favoritePokemons.length === 0 ? (
         <div>
           <span role="img" aria-label="">
             💔
@@ -26,7 +26,7 @@ const Navbar = () => {
           <span role="img" aria-label="">
             💘
           </span>{" "}
-          {JSON.parse(localStorage.getItem("favorites")).length}
+          {favoritePokemons.length}
         </div>
       )}
     </nav>
