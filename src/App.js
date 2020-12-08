@@ -13,7 +13,6 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [favorites, setFavorites] = useState([]);
 
   const fetchPokemons = async () => {
     try {
@@ -34,7 +33,7 @@ export default function App() {
   }, [page]);
 
   const updateFavoritePokemons = (name) => {
-    const updated = [...favorites];
+    const updated = [...JSON.parse(localStorage.getItem("favorites"))];
     const isFavorite = updated.indexOf(name);
     if (isFavorite >= 0) {
       updated.splice(isFavorite, 1);
@@ -42,8 +41,6 @@ export default function App() {
       updated.push(name);
     }
     localStorage.setItem("favorites", JSON.stringify(updated));
-
-    setFavorites(updated);
   };
 
   return (
