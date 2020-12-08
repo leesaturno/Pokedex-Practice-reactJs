@@ -1,6 +1,6 @@
 import React from "react";
-import { searchPokemon } from "./data/api";
-import PokemonSearch from "./components/pokemonSearch";
+import { searchPokemon } from "../data/api";
+import PokemonSearch from "../components/pokemonSearch";
 const { useState } = React;
 
 const Searchbar = () => {
@@ -8,7 +8,7 @@ const Searchbar = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(false);
   const onChange = (e) => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toLowerCase());
   };
 
   const onClick = async (e) => {
@@ -17,14 +17,25 @@ const Searchbar = () => {
     setLoading(false);
     console.log(pokemon.name);
   };
+  const enters = async (e) => {
+    if (e.key === "Enter") {
+      console.log(pokemon.name);
+    }
+  };
 
   return (
     <div className="searchbar-container">
       <div className="searchbar">
-        <input placeholder="Buscar pokemon..." onChange={onChange} />
+        <input
+          type="search"
+          placeholder="Buscar pokemon..."
+          onChange={onChange}
+        />
       </div>
       <div className="searchbar-btn">
-        <button onClick={onClick}>Buscar</button>
+        <button onClick={onClick} onKeyDown={enters}>
+          Buscar
+        </button>
       </div>
       <div className="pokedex-grid">
         {Object.entries(pokemon).length === 0 && loading === false ? (

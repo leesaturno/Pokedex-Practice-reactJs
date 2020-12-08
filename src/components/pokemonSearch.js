@@ -6,7 +6,7 @@ const PokemonSearch = (props) => {
   const { favoritePokemons, updateFavoritePokemons } = useContext(
     FavoriteContext
   );
-  const redHeart = "❤️";
+  const redHeart = "💘";
   const blackHeart = "🖤";
   const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart;
 

@@ -30,6 +30,7 @@ export default function App() {
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
+
       setTotal(Math.ceil(data.count / 79));
     } catch (err) {}
   };

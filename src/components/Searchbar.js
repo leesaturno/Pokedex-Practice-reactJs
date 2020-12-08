@@ -8,10 +8,12 @@ const Searchbar = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(false);
   const onChange = (e) => {
+    e.preventDefault();
     setSearch(e.target.value.toLowerCase());
   };
 
   const onClick = async (e) => {
+    e.preventDefault();
     const data = await searchPokemon(search);
     setPokemon(data);
     setLoading(false);
@@ -21,11 +23,13 @@ const Searchbar = () => {
   return (
     <div className="searchbar-container">
       <div className="searchbar">
-        <input
-          type="search"
-          placeholder="Buscar pokemon..."
-          onChange={onChange}
-        />
+        <form onSubmit={onClick}>
+          <input
+            type="search"
+            placeholder="Buscar pokemon..."
+            onChange={onChange}
+          />
+        </form>
       </div>
       <div className="searchbar-btn">
         <button onClick={onClick}>Buscar</button>
