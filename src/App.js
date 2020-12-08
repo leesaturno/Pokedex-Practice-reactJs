@@ -9,6 +9,10 @@ import { FavoriteProvider } from "./contexts/favoritesContext";
 const { useState, useEffect } = React;
 
 export default function App() {
+  if (localStorage.getItem("favorites") === null) {
+    //...
+    localStorage.setItem("favorites", "[]");
+  }
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
