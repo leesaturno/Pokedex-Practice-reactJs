@@ -13,7 +13,9 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(
+    JSON.parse(localStorage.getItem("favorites"))
+  );
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -47,7 +49,7 @@ export default function App() {
   return (
     <FavoriteProvider
       value={{
-        favoritePokemons: JSON.parse(localStorage.getItem("favorites")),
+        favoritePokemons: favorites,
         updateFavoritePokemons: updateFavoritePokemons
       }}
     >
